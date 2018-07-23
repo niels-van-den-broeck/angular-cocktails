@@ -1,22 +1,7 @@
-const request = require('superagent')
-
-const getCocktailTypes = () => {
-return new Promise((resolve, reject) => {
-    request
-        .get('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
-        .then(resp => {
-            resolve(resp)
-        })
-        .catch(err => {
-            reject(err)
-        })
-})
-
-
-
-
-}
+const types = require('./types')
+const cocktails = require('./cocktails')
 
 module.exports = {
-    getCocktailTypes: getCocktailTypes
+    ...types,
+    ...cocktails
 }

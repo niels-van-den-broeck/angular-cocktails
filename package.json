@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.6.10",
     "body-parser": "latest",
     "express": "^4.16.3",
     "superagent": "^3.8.3"

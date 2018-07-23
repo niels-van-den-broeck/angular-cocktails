@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const APIFactory = require('./apiCalls')
+const APIFactory = require('./apiCalls');
+const dataParser = require('./dataParsing')
 
 const app = express();
 
@@ -13,18 +14,33 @@ const router = express.Router();
 
 router.use(function(req, res, next) {
     // do logging
-    console.log(req.body);
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next(); // make sure we go to the next routes and don't stop here
 });
 
 
 router.route('/cocktailtypes')
-    .get((req, res) => {
+    .get((request, response) => {
         APIFactory.getCocktailTypes()
-            .then(res => res.json({cocktailTypes: res}))
-            .catch(err => console.log(err))
-
+            .then(res => {
+                const types = dataParser.parseCocktailTypes(res.text)
+                response.json({cocktailTypes: types})
+            })
+            .catch(error => response.json({error}))
     })
+
+router.route('/cocktailtypes/:typename')
+    .get((request, response) => {
+
+        APIFactory.getCocktailsByType(request.params.typename)
+            .then(res => {
+                const cocktails = dataParser.parseCocktailsByCategory(res.text)
+                response.json({cocktails})
+            })
+            .catch(error => response.json({error}))
+    })
+
 
 app.use('/api', router);
 
