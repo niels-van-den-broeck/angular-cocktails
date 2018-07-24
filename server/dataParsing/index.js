@@ -49,7 +49,7 @@ const parseCocktailTypes = (data) => {
 }
 
 const parseCocktailsByCategory = (data) => {
-    return JSON.parse(data).drinks.map((el) => {
+    return data.map((el) => {
         return{
             name: el.strDrink,
             url: el.strDrinkThumb,

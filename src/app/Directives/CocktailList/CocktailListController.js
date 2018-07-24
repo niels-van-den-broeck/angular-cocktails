@@ -1,11 +1,20 @@
 app.controller('CocktailListController', ($scope, $http, $routeParams) => {
 
-     $http.get('http://localhost:8080/api/cocktailtypes/' + $routeParams.id)
-        .then(res => {
-            $scope.cocktails = res.data.cocktails
-            console.log($scope.cocktails)
-        })
-         .catch(err => console.log(err))
+    if (!$routeParams.id){
+
+        $http.get('http://localhost:8080/api/search/' + $routeParams.searched)
+            .then(res => {
+                $scope.cocktails = res.data.cocktails
+            })
+            .catch(err => $scope.error = true)
+    } else{
+        $http.get('http://localhost:8080/api/cocktailtypes/' + $routeParams.id)
+            .then(res => {
+                $scope.cocktails = res.data.cocktails
+            })
+            .catch(err => $scope.error = true)
+    }
+
 })
 
 

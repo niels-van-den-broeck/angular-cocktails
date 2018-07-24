@@ -6,3 +6,11 @@ body, html{
 .figure{
     width: 20%
 }
+
+.form-inline{
+    margin: auto;
+    text-align: center;
+}
+.inline-center{
+    margin: auto
+}

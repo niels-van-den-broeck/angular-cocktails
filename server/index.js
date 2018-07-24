@@ -32,10 +32,9 @@ router.route('/cocktailtypes')
 
 router.route('/cocktailtypes/:typename')
     .get((request, response) => {
-
         APIFactory.getCocktailsByType(request.params.typename)
             .then(res => {
-                const cocktails = dataParser.parseCocktailsByCategory(res.text)
+                const cocktails = dataParser.parseCocktailsByCategory(res.body.drinks)
                 response.json({cocktails})
             })
             .catch(error => response.json({error: error}))
@@ -45,10 +44,19 @@ router.route('/cocktail/:id')
     .get((request, response) => {
         APIFactory.getCocktailById(request.params.id)
             .then(res => {
-                console.log(res.text)
                 const cocktail = dataParser.parseCocktailDetails(res.body.drinks)
 
                 response.json({cocktail})
+            })
+            .catch(error => response.json({error}))
+    })
+
+router.route('/search/:searched')
+    .get((request, response) => {
+        APIFactory.getCocktailsByName(request.params.searched)
+            .then(res => {
+                const cocktails = dataParser.parseCocktailsByCategory(res.body.drinks)
+                response.json({cocktails})
             })
             .catch(error => response.json({error}))
     })
