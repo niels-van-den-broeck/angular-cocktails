@@ -1,0 +1,26 @@
+<div class="card text-white bg-dark mb-3" ng-controller='CocktailDetailsController' style="width: 50rem;">
+
+    <img class=".card-img-top" ng-src="{{cocktail.strDrinkThumb}}" alt="{{cocktail.strDrink}}" />
+    <div class="card-body">
+        <h1 class="card-title">{{cocktail.strDrink}}</h1>
+
+        <p class="card-subtitle mb-2 text-muted">Glass:</p>
+        <p> {{cocktail.strGlass}}</p>
+        <p class="card-subtitle mb-2 text-muted">Instructions:</p>
+        <p>{{cocktail.strInstructions}}</p>
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Ingredient:</th>
+                <th scope="col">Measure</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="ingredient in cocktail.ingredients" ng-init="ingredient">
+                <td ng-if="!''" ng-repeat="(key, val) in ingredient">{{key}}</td>
+                <td ng-if="!''" ng-repeat="(key, val) in ingredient">{{val}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+body, html{
+    background-image: url("https://thediyfoodie.com/wp-content/uploads/2015/10/Light-Grey-Background-Texture-4.jpg");
+    background-size: cover;
+}
+
+.figure{
+    width: 20%
+}

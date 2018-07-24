@@ -1,0 +1,8 @@
+<div ng-controller="CocktailListController">
+    <figure class="figure" ng-repeat="cocktail in cocktails">
+        <a href="#!/cocktails/{{cocktail.id}}">
+            <img class="figure-img img-fluid rounded" ng-src="{{cocktail.url}}" alt="cocktail.name"/>
+            <figcaption class="figure-caption">{{cocktail.name}}</figcaption>
+        </a>
+    </figure>
+</div>

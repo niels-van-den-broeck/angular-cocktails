@@ -4,15 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server",
+    "webpack": "webpack ./app/app.js ./build/bundle.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.10",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.5",
     "body-parser": "latest",
+    "bootstrap": "^4.1.2",
     "express": "^4.16.3",
-    "superagent": "^3.8.3"
+    "path": "^0.12.7",
+    "superagent": "^3.8.3",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0"
   }
 }

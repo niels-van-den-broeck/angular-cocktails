@@ -27,7 +27,7 @@ router.route('/cocktailtypes')
                 const types = dataParser.parseCocktailTypes(res.text)
                 response.json({cocktailTypes: types})
             })
-            .catch(error => response.json({error}))
+            .catch(error => response.json({error: error}))
     })
 
 router.route('/cocktailtypes/:typename')
@@ -38,9 +38,20 @@ router.route('/cocktailtypes/:typename')
                 const cocktails = dataParser.parseCocktailsByCategory(res.text)
                 response.json({cocktails})
             })
-            .catch(error => response.json({error}))
+            .catch(error => response.json({error: error}))
     })
 
+router.route('/cocktail/:id')
+    .get((request, response) => {
+        APIFactory.getCocktailById(request.params.id)
+            .then(res => {
+                console.log(res.text)
+                const cocktail = dataParser.parseCocktailDetails(res.body.drinks)
+
+                response.json({cocktail})
+            })
+            .catch(error => response.json({error}))
+    })
 
 app.use('/api', router);
 
