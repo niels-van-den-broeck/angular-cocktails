@@ -14,3 +14,10 @@ body, html{
 .inline-center{
     margin: auto
 }
+figcaption{
+    color: black
+}
+
+img.banner{
+    max-height: 29rem;
+}
