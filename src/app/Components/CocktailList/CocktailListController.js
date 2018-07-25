@@ -1,8 +1,8 @@
 export default class CocktailListController{
-    constructor($scope, $http, $routeParams){
+    constructor($scope, $http, $routeParams, $animate){
         this.$scope = $scope;
         this.$http = $http;
-        this.$routeParams = $routeParams
+        this.$routeParams = $routeParams;
         this.loadData();
         this.$scope.$watch('search', () => {
             this.loadData()
@@ -15,6 +15,7 @@ export default class CocktailListController{
             this.$http.get('http://localhost:8080/api/search/' + this.$scope.search)
                 .then(res => {
                     this.$scope.cocktails = res.data.cocktails
+
                 })
                 .catch(err => this.$scope.error = true)
         } else{

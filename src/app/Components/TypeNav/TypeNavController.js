@@ -12,5 +12,7 @@ export default class TypeNavController{
             })
             .catch(err => console.log(err));
     }
+
+
 }
 

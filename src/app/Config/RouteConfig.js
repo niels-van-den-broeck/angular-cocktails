@@ -1,6 +1,7 @@
 import HomeMarkup from "../Components/Home/Home.html";
 import CocktailListMarkup from "../Components/CocktailList/CocktailList.html";
 import CocktailDetailsMarkup from "../Components/CocktailDetails/CocktailDetails.html";
+import Unknown from '../Components/UnknownPage/Unknown.html'
 
 const RouteConfig = ($routeProvider) => {
     $routeProvider
@@ -17,6 +18,9 @@ const RouteConfig = ($routeProvider) => {
         .when("/cocktails/:id", {
             template : CocktailDetailsMarkup
         })
+        .otherwise({
+            template : Unknown
+        });
 }
 
 export default RouteConfig
