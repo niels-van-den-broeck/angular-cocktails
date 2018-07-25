@@ -3,12 +3,16 @@ export default class CocktailListController{
         this.$scope = $scope;
         this.$http = $http;
         this.$routeParams = $routeParams
+        this.loadData();
+        this.$scope.$watch('search', () => {
+            this.loadData()
+        })
     }
 
-    $onInit = () => {
-        if (!this.$routeParams.id){
 
-            this.$http.get('http://localhost:8080/api/search/' + this.$routeParams.searched)
+    loadData = () => {
+        if (!this.$routeParams.id){
+            this.$http.get('http://localhost:8080/api/search/' + this.$scope.search)
                 .then(res => {
                     this.$scope.cocktails = res.data.cocktails
                 })
@@ -22,5 +26,8 @@ export default class CocktailListController{
         }
     }
 
+    $onChange = (change) => {
+        this.loadData()
+    }
 }
 

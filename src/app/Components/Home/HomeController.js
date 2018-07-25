@@ -1,35 +1,3 @@
-//app.controller('HomeController',function($scope, $http, $routeParams, $location) {
-//
-//    $scope.state={
-//        searchVal : !$routeParams.searched || $routeParams.searched === '' ? '' : $routeParams.searched,
-//        found : !!$routeParams.searched,
-//    }
-//
-//    $scope.go = ( path ) => {
-//        $location.path( path );
-//    };
-//
-//    $scope.submit = () => {
-//        if($scope.state.searchVal !== ''){
-//            $scope.go(`/search/${$scope.state.searchVal}`);
-//        }else{
-//            $scope.go(`/`);
-//        }
-//
-//    }
-//
-//    $scope.change = () => {
-//        if($scope.searchVal !== ''){
-//            $scope.go(`/search/${$scope.state.searchVal}`);
-//        }else{
-//            $scope.go(`/`);
-//        }
-//    }
-//
-//
-//
-//});
-
 import Banner from './../../res/Mumbai-blog-banner-1400x400px.jpg'
 
 export default class HomeController {
@@ -53,9 +21,10 @@ export default class HomeController {
 
         this.$scope.change = () => {
             if(this.$scope.state.searchVal !== ''){
-                this.$scope.go(`/search/${this.$scope.state.searchVal}`);
+                this.$scope.state.found = true;
+
             }else{
-                this.$scope.go(`/`);
+                this.$scope.state.found = false
             }
         }
     }

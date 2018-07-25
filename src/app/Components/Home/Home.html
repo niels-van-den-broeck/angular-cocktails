@@ -4,11 +4,11 @@
         <h1 class="card-title">Cocktails in AngularJS</h1>
         <form class="form-inline">
             <div class="inline-center">
-                <input class="form-control mr-sm-2" type="search" ng-model="state.searchVal"  placeholder="Search" aria-label="Search" autofocus>
+                <input class="form-control mr-sm-2" type="search" ng-model="state.searchVal" ng-change="change()"  placeholder="Search" aria-label="Search" autofocus>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" ng-click="change()">Search</button>
             </div>
         </form>
     </div>
-    <ng-list ng-if="state.found"></ng-list>
+    <ng-list search="{{state.searchVal}}" ng-if="state.found"></ng-list>
 </div>
 

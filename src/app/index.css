@@ -1,10 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
+
 body, html{
-    background-image: url("https://thediyfoodie.com/wp-content/uploads/2015/10/Light-Grey-Background-Texture-4.jpg");
+    background-image: linear-gradient(to right, #f7efef, #eff7f2);
     background-size: cover;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+}
+nav ul li {
+    font-size: 1.3em
 }
 
 .figure{
-    width: 20%
+    width: 20%;
+    background-color: transparent;
 }
 
 .form-inline{
@@ -14,8 +25,12 @@ body, html{
 .inline-center{
     margin: auto
 }
-figcaption{
-    color: black
+.figure-caption{
+    color: black;
+    font-size: 1.1em;
+    background-color: transparent;
+    font-weight: bold;
+    text-align: center;
 }
 
 img.banner{
