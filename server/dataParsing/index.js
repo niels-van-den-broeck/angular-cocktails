@@ -15,7 +15,7 @@ const parseCocktailDetails = (input) => {
         if (curr.indexOf('Ingredient') > -1){
             const index = curr.substring('strIngredient'.length)
             const measure = keys[keys.indexOf('strMeasure' + index)]
-            if(details[curr] !== ''){
+            if(details[curr] !== '' && details[curr] !== null){
                 console.log(index)
                 objArr.push({[details[curr]]: details[measure]})
             }

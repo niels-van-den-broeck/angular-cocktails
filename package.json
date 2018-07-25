@@ -4,22 +4,34 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server",
-    "webpack": "webpack ./app/app.js ./build/bundle.js"
+    "start": "webpack-dev-server --history-api-fallback --inline --progress",
+    "webpack": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.6.10",
+    "angular": "^1.7.2",
+    "angular-route": "^1.7.2",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "body-parser": "latest",
     "bootstrap": "^4.1.2",
+    "css-loader": "^1.0.0",
     "express": "^4.16.3",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
     "path": "^0.12.7",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.21.0",
     "superagent": "^3.8.3",
+    "url": "^0.11.0",
+    "url-loader": "^1.0.1",
     "webpack": "^4.16.2",
     "webpack-cli": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0"
   }
 }

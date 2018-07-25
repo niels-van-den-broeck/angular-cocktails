@@ -1,6 +1,8 @@
-app.directive('ngList', () => {
+const CocktailListDirective = () => {
     return{
         restrict : 'E',
-        templateUrl : 'Components/CocktailList/CocktailList.html'
+        template : require('./CocktailList.html')
     }
-})
+}
+
+export default CocktailListDirective

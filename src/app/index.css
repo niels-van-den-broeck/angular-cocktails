@@ -21,3 +21,8 @@ figcaption{
 img.banner{
     max-height: 29rem;
 }
+
+.headImg{
+    margin: auto;
+    max-width: 25rem;
+}
