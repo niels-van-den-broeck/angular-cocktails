@@ -1,14 +1,9 @@
-//module.directive('ngTypes', () => {
-//    return{
-//        restrict : 'E',
-//        templateUrl : 'Components/TypeNav/TypeNav.html'
-//    }
-//})
+import TypeNavMarkup from './TypeNav.html'
 
 const TypeDirective = () => {
     return{
         restrict : 'E',
-        template : require('./TypeNav.html')
+        template : TypeNavMarkup
     }
 }
 

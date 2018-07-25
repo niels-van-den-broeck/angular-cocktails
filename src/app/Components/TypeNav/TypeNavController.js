@@ -1,18 +1,3 @@
-
-//app.controller('TypeNavController',function($scope, $http) {
-//
-//    $scope.cocktailTypes = []
-//
-//    this.$onInit = () => {
-//        $http.get('http://localhost:8080/api/cocktailtypes')
-//            .then(res => {
-//                $scope.cocktailTypes = res.data.cocktailTypes
-//
-//            })
-//            .catch(err => console.log(err));
-//    }
-//})
-
 export default class TypeNavController{
     constructor($scope, $http){
         this.$scope = $scope;

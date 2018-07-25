@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     context: path.resolve('js'),
@@ -16,6 +17,15 @@ module.exports = {
             inject: 'body'
         })
     ],
+
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                test: /\.js($|\?)/i
+            })
+        ]
+    },
+
     devServer: {  // configuration for webpack-dev-server
         contentBase: __dirname + '/src/public',  //source of static assets
         port: 7700, // port to run dev-server
@@ -36,8 +46,7 @@ module.exports = {
                 loader: "raw-loader"
             },
             {
-                test: /\.css$/,
-                exclude: /node_modules/,
+
                 test: /\.css$/,
                 use: [ 'style-loader', 'css-loader' ]
             },

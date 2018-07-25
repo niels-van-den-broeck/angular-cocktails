@@ -1,7 +1,9 @@
+import CocktailListMarkup from './CocktailList.html'
+
 const CocktailListDirective = () => {
     return{
         restrict : 'E',
-        template : require('./CocktailList.html')
+        template : CocktailListMarkup
     }
 }
 
