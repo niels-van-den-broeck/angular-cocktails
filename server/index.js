@@ -61,6 +61,16 @@ router.route('/search/:searched')
             .catch(error => response.json({error}))
     })
 
+router.route('/search/i/:ingredient')
+    .get((request, response) => {
+        APIFactory.getCocktailsByIngredient(request.params.ingredient)
+            .then(res => {
+                const cocktails = dataParser.parseCocktailsByCategory(res.body.drinks)
+                response.json({cocktails})
+            })
+            .catch(error => response.json({error}))
+    })
+
 app.use('/api', router);
 
 app.listen(port);

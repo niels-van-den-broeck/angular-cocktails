@@ -1,8 +1,4 @@
 {
-  "presets": [["env", {
-    "targets": {
-      "chrome": "60"
-    }
-  }]],
+  "presets": ["es2015"],
   "plugins": ["babel-plugin-transform-class-properties"]
 }

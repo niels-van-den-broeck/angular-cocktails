@@ -1,6 +1,7 @@
 //Necessary libs
 import angular from 'angular'
 import ngRoute from 'angular-route'
+import ngAnimate from 'angular-animate'
 import $ from 'jquery'
 
 //Directives
@@ -23,7 +24,7 @@ import RouteConfig from "./Config/RouteConfig";
 
 
 //Initialise module
-const module = angular.module('app', [ngRoute])
+const module = angular.module('app', [ngRoute, ngAnimate])
     .controller('CocktailDetailsController', CocktailDetailsController)
     .controller('HomeController', HomeController)
     .controller('CocktailListController', CocktailListController)

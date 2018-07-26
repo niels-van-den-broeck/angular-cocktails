@@ -40,8 +40,19 @@ const getCocktailsByType = (type) => {
 
 }
 
+const getCocktailsByIngredient = (ingredient) => {
+    return new Promise ((resolve, reject) => {
+        const url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + ingredient
+        request
+            .get(url)
+            .then(res => resolve(res))
+            .catch(err => reject(err))
+    })
+}
+
 module.exports = {
     getCocktailsByType: getCocktailsByType,
     getCocktailById: getCocktailById,
     getCocktailsByName: getCocktailsByName,
+    getCocktailsByIngredient: getCocktailsByIngredient,
 }
