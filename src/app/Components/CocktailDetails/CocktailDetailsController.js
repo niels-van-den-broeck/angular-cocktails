@@ -11,7 +11,6 @@ export default class CocktailDetailsController {
 
         this.$http.get(`http://localhost:8080/api/cocktail/${this.$routeParams.id}`)
             .then(res => {
-
                 this.$scope.cocktail = res.data.cocktail
                 console.log(this.$scope.cocktail)
             })

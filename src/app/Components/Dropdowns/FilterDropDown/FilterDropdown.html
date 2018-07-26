@@ -1,0 +1,15 @@
+
+<div ng-controller='FilterDropDownController' class="dropdown">
+    <button class="form-control dropdown-toggle homeSearch" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{state.searchVal || 'Choose ingredient'}}
+    </button>
+    <div class="dropdown-menu filtermenu" aria-labelledby="dropdownMenuButton">
+        <input class="dropdowninput" type="text" ng-model="search" ng-change="refreshData()"/>
+        <ul>
+            <li class="dropdown-item" ng-repeat="result in results">
+                <a ng-click="setValue(result)" >{{result}}</a>
+            </li>
+        </ul>
+
+    </div>
+</div>

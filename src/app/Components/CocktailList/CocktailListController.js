@@ -12,7 +12,6 @@ export default class CocktailListController{
 
     loadData = () => {
         if (!this.$routeParams.id){
-            console.log(this.$scope.type)
             if (this.$scope.type === 'Name' || this.$scope.type ===''){
                 this.$http.get('http://localhost:8080/api/search/' + this.$scope.search)
                     .then(res => {

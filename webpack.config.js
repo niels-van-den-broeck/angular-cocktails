@@ -21,7 +21,7 @@ module.exports = {
     optimization: {
         minimizer: [
             new UglifyJsPlugin({
-                test: /\.js($|\?)/i
+                test: /\.js($|\?)/i,
             })
         ]
     },
@@ -60,6 +60,7 @@ module.exports = {
                     }
                 }]
             }
+
         ]
     },
 
