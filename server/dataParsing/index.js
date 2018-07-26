@@ -16,7 +16,6 @@ const parseCocktailDetails = (input) => {
             const index = curr.substring('strIngredient'.length)
             const measure = keys[keys.indexOf('strMeasure' + index)]
             if(details[curr] !== '' && details[curr] !== null){
-                console.log(index)
                 objArr.push({[details[curr]]: details[measure]})
             }
 
@@ -27,7 +26,7 @@ const parseCocktailDetails = (input) => {
         }
 
     })
-    returnObject.ingredients = objArr
+    returnObject.ingredients = objArr;
 
     return returnObject
 
@@ -48,6 +47,17 @@ const parseCocktailTypes = (data) => {
 
 }
 
+const parseIngredients = (data) => {
+    try{
+        return JSON.parse(data).drinks.map((el) => {
+            return el.strIngredient1
+        })
+    }catch(err){
+        return err
+    }
+
+}
+
 const parseCocktailsByCategory = (data) => {
     return data.map((el) => {
         return{
@@ -59,8 +69,9 @@ const parseCocktailsByCategory = (data) => {
 }
 
 module.exports = {
-    parseCocktailTypes: parseCocktailTypes,
-    parseCocktailsByCategory: parseCocktailsByCategory,
-    replaceAll: replaceAll,
-    parseCocktailDetails: parseCocktailDetails
+    parseCocktailTypes,
+    parseCocktailsByCategory,
+    replaceAll,
+    parseCocktailDetails,
+    parseIngredients
 }

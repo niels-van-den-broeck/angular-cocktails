@@ -13,6 +13,20 @@ const getCocktailTypes = () => {
     })
 }
 
+const getCocktailIngredients = () => {
+    return new Promise((resolve, reject) => {
+        request
+            .get('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
+            .then(resp => {
+                resolve(resp)
+            })
+            .catch(err => {
+                reject(err)
+            })
+    })
+}
+
 module.exports = {
-    getCocktailTypes: getCocktailTypes,
+    getCocktailTypes,
+    getCocktailIngredients,
 }

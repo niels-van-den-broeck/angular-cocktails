@@ -50,9 +50,20 @@ const getCocktailsByIngredient = (ingredient) => {
     })
 }
 
+const getRandom = () => {
+        return new Promise ((resolve, reject) => {
+            const url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
+            request
+                .get(url)
+                .then(res => resolve(res))
+                .catch(err => reject(err))
+        })
+}
+
 module.exports = {
-    getCocktailsByType: getCocktailsByType,
-    getCocktailById: getCocktailById,
-    getCocktailsByName: getCocktailsByName,
-    getCocktailsByIngredient: getCocktailsByIngredient,
+    getCocktailsByType,
+    getCocktailById,
+    getCocktailsByName,
+    getCocktailsByIngredient,
+    getRandom
 }

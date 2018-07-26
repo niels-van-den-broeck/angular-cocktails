@@ -71,6 +71,26 @@ router.route('/search/i/:ingredient')
             .catch(error => response.json({error}))
     })
 
+router.route('/random')
+    .get((request, response) => {
+        APIFactory.getRandom()
+            .then(res => {
+                const cocktails = dataParser.parseCocktailsByCategory(res.body.drinks)
+                response.json({cocktails})
+            })
+            .catch(error => response.json({error}))
+    })
+
+router.route('/ingredients')
+    .get((request, response) => {
+        APIFactory.getCocktailIngredients()
+    .then(res => {
+            const ingredients = dataParser.parseIngredients(res.text)
+            response.json({ingredients})
+        })
+            .catch(error => response.json({error: error}))
+    })
+
 app.use('/api', router);
 
 app.listen(port);

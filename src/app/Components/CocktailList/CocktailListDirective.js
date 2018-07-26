@@ -4,7 +4,8 @@ const CocktailListDirective = () => {
     return{
         restrict : 'E',
         scope: {
-          search: '@'
+          search: '@',
+            type: '@',
         },
         template : CocktailListMarkup
     }
