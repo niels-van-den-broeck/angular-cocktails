@@ -1,6 +1,7 @@
 //Necessary libs
 import angular from 'angular'
 import ngRoute from 'angular-route'
+import ngRedux from 'ng-redux'
 import 'jquery/dist/jquery.slim.min'
 import 'bootstrap/dist/js/bootstrap.bundle'
 
@@ -25,9 +26,10 @@ import './Components/CocktailDetails/CocktailDetails.css'
 
 //Configs
 import RouteConfig from "./Config/RouteConfig";
+//import StoreConfig from "./Config/StoreConfig";
 
 //Initialise module
-const module = angular.module('app', [ngRoute])
+const module = angular.module('app', [ngRoute, ngRedux])
     .controller('CocktailDetailsController', CocktailDetailsController)
     .controller('HomeController', HomeController)
     .controller('CocktailListController', CocktailListController)
@@ -40,3 +42,4 @@ const module = angular.module('app', [ngRoute])
     .directive('ngFilter',FilterDropDownDirective)
     .directive('ngDrop',TextDropDownDirective)
     .config(RouteConfig)
+    //.config(StoreConfig)
