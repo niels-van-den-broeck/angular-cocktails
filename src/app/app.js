@@ -1,6 +1,6 @@
 //Necessary libs
-import angular from 'angular/angular.min'
-import ngRoute from 'angular-route/angular-route.min'
+import angular from 'angular'
+import ngRoute from 'angular-route'
 import 'jquery/dist/jquery.slim.min'
 import 'bootstrap/dist/js/bootstrap.bundle'
 
