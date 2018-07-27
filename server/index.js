@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const APIFactory = require('./apiCalls');
 const dataParser = require('./dataParsing')
-
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));

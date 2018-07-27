@@ -2,7 +2,7 @@ import HomeMarkup from "../Components/Home/Home.html";
 import CocktailListMarkup from "../Components/CocktailList/CocktailList.html";
 import CocktailDetailsMarkup from "../Components/CocktailDetails/CocktailDetails.html";
 import Unknown from '../Components/UnknownPage/Unknown.html'
-
+/* @ngInject */
 const RouteConfig = ($routeProvider) => {
     $routeProvider
         .when('/', {

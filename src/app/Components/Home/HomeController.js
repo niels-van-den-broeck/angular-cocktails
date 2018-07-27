@@ -1,6 +1,7 @@
 import Banner from './../../res/Mumbai-blog-banner-1400x400px.jpg'
 
 export default class HomeController {
+    /* @ngInject */
     constructor($scope, $http, $location){
         this.scope = $scope;
         this.http = $http;
@@ -13,7 +14,7 @@ export default class HomeController {
                 this.scope.ingredients = res.data.ingredients;
             })
     }
-
+    /* @ngInject */
     $onInit = () => {
         this.loadIngredients()
         this.scope.imageLink = Banner

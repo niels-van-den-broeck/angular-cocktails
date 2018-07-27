@@ -1,9 +1,11 @@
 export default class CocktailListController{
+    /* @ngInject */
     constructor($scope, $http, $routeParams){
         this.$scope = $scope;
         this.$http = $http;
         this.$routeParams = $routeParams;
         this.loadData();
+
         this.$scope.$watch('[search,type]', () => {
             this.loadData()
         })
@@ -36,6 +38,7 @@ export default class CocktailListController{
                 .catch(err => this.$scope.error = true)
         }
     }
+
 
     $onChange = (change) => {
         this.loadData()

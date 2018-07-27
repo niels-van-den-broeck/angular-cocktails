@@ -31,14 +31,22 @@ module.exports = {
         port: 7700, // port to run dev-server
     },
 
-    mode: 'development',
+    mode: 'production',
 
     module: {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
-                loader: "babel-loader"
+                exclude: [/server/, /node_modules/],
+                use: [
+                    {
+                        loader: 'ng-annotate-loader',
+                    },
+                    {
+                        loader: "babel-loader"
+                    }
+                    ]
+
             },
             {
                 test: /\.html$/,

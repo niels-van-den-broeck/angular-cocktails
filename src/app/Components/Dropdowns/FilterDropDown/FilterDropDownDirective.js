@@ -1,6 +1,7 @@
 import FilterDropDownMarkup from './FilterDropdown.html'
 
 const FilterDropDownDirective = () => {
+    /* @ngInject */
     return{
         restrict : 'E',
         scope: {

@@ -1,4 +1,5 @@
 export default class CocktailDetailsController {
+    /* @ngInject */
     constructor($scope, $http, $routeParams){
         this.$scope = $scope
         this.$http = $http

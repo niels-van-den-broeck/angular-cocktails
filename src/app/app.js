@@ -1,9 +1,8 @@
 //Necessary libs
-import angular from 'angular'
-import ngRoute from 'angular-route'
-import 'jquery/dist/jquery.min'
-import 'popper.js/dist/popper.min'
-import 'bootstrap/dist/js/bootstrap.min'
+import angular from 'angular/angular.min'
+import ngRoute from 'angular-route/angular-route.min'
+import 'jquery/dist/jquery.slim.min'
+import 'bootstrap/dist/js/bootstrap.bundle'
 
 //Directives
 import TypeDirective from "./Components/TypeNav/TypeNavDirective";
@@ -26,11 +25,6 @@ import './Components/CocktailDetails/CocktailDetails.css'
 
 //Configs
 import RouteConfig from "./Config/RouteConfig";
-
-
-
-
-
 
 //Initialise module
 const module = angular.module('app', [ngRoute])

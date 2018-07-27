@@ -1,6 +1,7 @@
 import TextDropDownMarkup from './TextDropdown.html'
 
 const TextDropDownDirective = () => {
+    /* @ngInject */
     return{
         restrict : 'E',
         scope: {

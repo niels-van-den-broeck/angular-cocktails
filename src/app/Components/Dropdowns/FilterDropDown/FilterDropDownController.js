@@ -1,8 +1,10 @@
 export default class FilterDropDownController{
+    /* @ngInject */
     constructor($scope){
         this.scope = $scope;
 
     }
+    /* @ngInject */
     $onInit = () => {
         this.scope.search = ''
         this.scope.results = this.scope.props
